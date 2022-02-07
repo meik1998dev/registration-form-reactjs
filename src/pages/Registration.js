@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Grid } from '@mui/material';
 import React from 'react';
 import { FirstStep } from '../components/FirstStep';
+import { SecondStep } from '../components/SecondStep';
 import { StepCard } from '../components/StepCard';
 
 export const Registration = () => {
@@ -21,7 +22,7 @@ export const Registration = () => {
                <FirstStep values={values} setValues={setValues} />
             </Grid>
             <Grid flex={1} item>
-               <StepCard number={2} color={'#58355E'}></StepCard>
+               <SecondStep />
             </Grid>
             <Grid flex={1} item>
                <StepCard number={3} color={'#EC0B43'}></StepCard>
