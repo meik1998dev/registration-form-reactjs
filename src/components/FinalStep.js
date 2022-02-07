@@ -4,12 +4,13 @@ import React from 'react';
 import { StepCard } from '../components/StepCard';
 import styled from '@emotion/styled';
 
-export const FinalStep = () => {
-   const [checked, setChecked] = React.useState(true);
+export const FinalStep = ({ values }) => {
+   const [checked, setChecked] = React.useState(false);
 
    const handleChange = (event) => {
       setChecked(event.target.checked);
    };
+
    return (
       <StepCard number={3} color={'#EC0B43'}>
          <Box
@@ -25,7 +26,10 @@ export const FinalStep = () => {
             />
          </Box>
          <Box display='flex' justifyContent='center'>
-            <Button disabled={checked ? false : true} variant='contained'>
+            <Button
+               onClick={() => console.log(values)}
+               disabled={checked ? false : true}
+               variant='contained'>
                Complete Registration
             </Button>
          </Box>

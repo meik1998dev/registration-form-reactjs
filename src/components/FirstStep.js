@@ -4,13 +4,15 @@ import React, { useEffect, useState } from 'react';
 import { StepCard } from './StepCard';
 import successVector from '../success-svgrepo-com.svg';
 
-export const FirstStep = () => {
+export const FirstStep = ({ values, setValues }) => {
    const [number, setNumber] = useState(0);
-   const [attendsName, setAttendesName] = useState({});
    const [isPassed, setIsPassed] = useState(false);
+   const { attendsName } = values;
 
    useEffect(() => {
-      checkIfPassed() ? setIsPassed(true) : setIsPassed(false);
+      if (attendsName) {
+         checkIfPassed() ? setIsPassed(true) : setIsPassed(false);
+      }
    });
 
    const handleSelect = (event) => {
@@ -28,7 +30,7 @@ export const FirstStep = () => {
                   arr[i + 1] = '';
                }
             });
-         setAttendesName(arr);
+         setValues({ ...values, attendsName: arr });
       } else {
          Array(number)
             .fill(0)
@@ -37,7 +39,7 @@ export const FirstStep = () => {
                   delete arr[i + 1];
                }
             });
-         setAttendesName(arr);
+         setValues({ ...values, attendsName: arr });
       }
 
       setNumber(value);
@@ -48,7 +50,10 @@ export const FirstStep = () => {
          target: { value },
       } = event;
 
-      setAttendesName({ ...attendsName, [i]: value });
+      setValues({
+         ...values,
+         attendsName: { ...values.attendsName, [i]: value },
+      });
    };
 
    const checkIfPassed = () => {

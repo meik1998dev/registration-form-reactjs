@@ -10,12 +10,7 @@ import {
 import { Box } from '@mui/system';
 import successVector from '../success-svgrepo-com.svg';
 
-export const SecondStep = () => {
-   const [value, setValue] = useState({
-      companyNameOnBadge: null,
-      specialAccommodations: null,
-   });
-
+export const SecondStep = ({ values, setValues }) => {
    const [isPassed, setIsPassed] = useState(false);
 
    useEffect(() => {
@@ -23,11 +18,13 @@ export const SecondStep = () => {
    });
 
    const checkIfPassed = () => {
-      for (var key in value) {
-         if (value[key] === null) {
-            return false;
-         }
+      if (
+         values.companyNameOnBadge === null ||
+         values.specialAccommodations === null
+      ) {
+         return false;
       }
+
       return true;
    };
 
@@ -43,10 +40,10 @@ export const SecondStep = () => {
 
                <FormControl>
                   <RadioGroup
-                     value={value.companyNameOnBadge}
+                     value={values.companyNameOnBadge}
                      onChange={(event) => {
-                        setValue({
-                           ...value,
+                        setValues({
+                           ...values,
                            companyNameOnBadge: event.target.value,
                         });
                      }}>
@@ -73,10 +70,10 @@ export const SecondStep = () => {
                </Header>
                <FormControl>
                   <RadioGroup
-                     value={value.specialAccommodations}
+                     value={values.specialAccommodations}
                      onChange={(event) => {
-                        setValue({
-                           ...value,
+                        setValues({
+                           ...values,
                            specialAccommodations: event.target.value,
                         });
                      }}>

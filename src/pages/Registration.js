@@ -8,8 +8,8 @@ import { StepCard } from '../components/StepCard';
 
 export const Registration = () => {
    const [values, setValues] = React.useState({
-      atterndesName: [{ 1: '' }],
-      companyBadge: null,
+      attendsName: {},
+      companyNameOnBadge: null,
       specialAccommodations: null,
    });
 
@@ -23,10 +23,10 @@ export const Registration = () => {
                <FirstStep values={values} setValues={setValues} />
             </Grid>
             <Grid flex={1} item>
-               <SecondStep />
+               <SecondStep values={values} setValues={setValues} />
             </Grid>
             <Grid flex={1} item>
-               <FinalStep />
+               <FinalStep values={values} />
             </Grid>
          </Grid>
       </>
