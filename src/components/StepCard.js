@@ -15,7 +15,7 @@ const Card = styled.div`
    background: #ffffff;
    box-shadow: 5px 5px 13px #d1d1d1, -5px -5px 13px #ffffff;
    padding: 0.5em;
-   height: 500px;
+   /* height: 500px; */
 `;
 
 const CardHeader = styled.h3`
