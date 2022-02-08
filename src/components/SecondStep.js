@@ -10,21 +10,25 @@ import {
 import { Box } from '@mui/system';
 import successVector from '../success-svgrepo-com.svg';
 
-export const SecondStep = ({ values, setValues }) => {
-   const [isPassed, setIsPassed] = useState(false);
+export const SecondStep = ({
+   values,
+   setValues,
+   setStepsPassed,
+   stepsPassed,
+}) => {
+   const { specialAccommodations, companyNameOnBadge } = values;
 
    useEffect(() => {
-      checkIfPassed() ? setIsPassed(true) : setIsPassed(false);
-   });
+      console.log(checkIfPassed());
+      checkIfPassed()
+         ? setStepsPassed({ ...stepsPassed, second: true })
+         : setStepsPassed({ ...stepsPassed, second: false });
+   }, [companyNameOnBadge, specialAccommodations]);
 
    const checkIfPassed = () => {
-      if (
-         values.companyNameOnBadge === null ||
-         values.specialAccommodations === null
-      ) {
+      if (companyNameOnBadge === null || specialAccommodations === null) {
          return false;
       }
-
       return true;
    };
 
@@ -40,7 +44,7 @@ export const SecondStep = ({ values, setValues }) => {
 
                <FormControl>
                   <RadioGroup
-                     value={values.companyNameOnBadge}
+                     value={companyNameOnBadge}
                      onChange={(event) => {
                         setValues({
                            ...values,
@@ -70,7 +74,7 @@ export const SecondStep = ({ values, setValues }) => {
                </Header>
                <FormControl>
                   <RadioGroup
-                     value={values.specialAccommodations}
+                     value={specialAccommodations}
                      onChange={(event) => {
                         setValues({
                            ...values,
@@ -91,7 +95,7 @@ export const SecondStep = ({ values, setValues }) => {
                </FormControl>
             </Box>
             <Box display='flex' justifyContent={'center'}>
-               {isPassed && <Image src={successVector} />}
+               {stepsPassed.second && <Image src={successVector} />}
             </Box>
          </Box>
       </StepCard>
