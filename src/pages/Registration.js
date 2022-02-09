@@ -66,5 +66,5 @@ export const Registration = () => {
 };
 
 const Header = styled.h1`
-   padding-left: 2rem;
+   padding-left: 1.9rem;
 `;
