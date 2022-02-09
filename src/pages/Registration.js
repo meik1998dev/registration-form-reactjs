@@ -65,4 +65,6 @@ export const Registration = () => {
    );
 };
 
-const Header = styled.h1``;
+const Header = styled.h1`
+   padding-left: 2rem;
+`;

@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
-import successVector from '../success-svgrepo-com.svg';
+import successVector from '../assets/success-svgrepo-com.svg';
 import styled from '@emotion/styled';
 
 export const SuccessSvg = ({ show }) => {
