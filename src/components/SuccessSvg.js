@@ -5,9 +5,15 @@ import successVector from '../success-svgrepo-com.svg';
 import styled from '@emotion/styled';
 
 export const SuccessSvg = ({ show }) => {
+   const nodeRef = React.useRef(null);
+
    return (
-      <CSSTransition in={show} timeout={1000} classNames='my-node'>
-         <Box display='flex' justifyContent={'center'}>
+      <CSSTransition
+         nodeRef={nodeRef}
+         in={show}
+         timeout={1000}
+         classNames='my-node'>
+         <Box ref={nodeRef} display='flex' justifyContent={'center'}>
             {show && <Image src={successVector} />}
          </Box>
       </CSSTransition>
