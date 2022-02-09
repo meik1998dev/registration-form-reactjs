@@ -1,7 +1,7 @@
 import { Button, Checkbox, FormControlLabel } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import { StepCard } from '../components/StepCard';
+import { StepCard } from '../StepCard';
 import styled from '@emotion/styled';
 
 export const FinalStep = ({ values }) => {

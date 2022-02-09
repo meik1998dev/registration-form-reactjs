@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
 import { Box, FormControl, MenuItem, Select, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { StepCard } from './StepCard';
-import successVector from '../success-svgrepo-com.svg';
-import { SuccessSvg } from './SuccessSvg';
+import { StepCard } from '../StepCard';
+import { SuccessSvg } from '../SuccessSvg';
 
 export const FirstStep = ({
    values,

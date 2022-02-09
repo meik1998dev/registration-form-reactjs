@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import { Grid } from '@mui/material';
 import React, { useState } from 'react';
-import { FinalStep } from '../components/FinalStep';
-import { FirstStep } from '../components/FirstStep';
-import { SecondStep } from '../components/SecondStep';
+import { FinalStep } from '../components/Steps/FinalStep';
+import { FirstStep } from '../components/Steps/FirstStep';
+import { SecondStep } from '../components/Steps/SecondStep';
 
 export const Registration = () => {
    const [values, setValues] = useState({

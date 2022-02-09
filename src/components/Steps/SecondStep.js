@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StepCard } from './StepCard';
+import { StepCard } from '../StepCard';
 import styled from '@emotion/styled';
 import {
    FormControl,
@@ -8,7 +8,7 @@ import {
    RadioGroup,
 } from '@mui/material';
 import { Box } from '@mui/system';
-import { SuccessSvg } from './SuccessSvg';
+import { SuccessSvg } from '../SuccessSvg';
 
 export const SecondStep = ({
    values,
