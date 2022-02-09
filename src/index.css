@@ -1,17 +1,28 @@
 html {
    font-family: 'Roboto', sans-serif;
+   font-size: 80.5%;
 }
+@media (max-width: 468px) {
+   html {
+      font-size: 60.5%;
+   }
+}
+
 .my-node-enter {
    opacity: 0;
- }
- .my-node-enter-active {
+}
+.my-node-enter-active {
    opacity: 1;
    transition: opacity 1000ms;
- }
- .my-node-exit {
+}
+.my-node-exit {
    opacity: 1;
- }
- .my-node-exit-active {
+}
+.my-node-exit-active {
    opacity: 0;
    transition: opacity 1000ms;
- }
+}
+
+.grids_container {
+   padding: 2rem;
+}

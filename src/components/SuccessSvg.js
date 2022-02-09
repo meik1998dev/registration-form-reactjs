@@ -21,6 +21,6 @@ export const SuccessSvg = ({ show }) => {
 };
 
 const Image = styled.img`
-   width: 200px;
+   width: 15rem;
    margin: 64px;
 `;

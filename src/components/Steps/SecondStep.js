@@ -93,14 +93,14 @@ export const SecondStep = ({
                   </RadioGroup>
                </FormControl>
             </Box>
-            <SuccessSvg show={stepsPassed.second } />
+            <SuccessSvg show={stepsPassed.second} />
          </Box>
       </StepCard>
    );
 };
 
 const Header = styled.h6`
-   font-size: 20px;
+   font-size: 1.3rem;
    flex-basis: 80%;
    padding: 5px;
 `;

@@ -109,7 +109,7 @@ export const FirstStep = ({
 };
 
 const Header = styled.h6`
-   font-size: 20px;
+   font-size: 1.3rem;
 `;
 
 const Input = styled(TextField)(() => ({

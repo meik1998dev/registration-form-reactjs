@@ -38,5 +38,5 @@ export const FinalStep = ({ values }) => {
 };
 
 const Header = styled.h6`
-   font-size: 20px;
+   font-size: 1.3rem;
 `;

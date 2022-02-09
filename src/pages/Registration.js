@@ -17,13 +17,11 @@ export const Registration = () => {
       second: false,
    });
 
-   console.log(stepsPassed);
-
    return (
       <>
          <Header>Seminar Registration</Header>
-         <Grid padding={4} spacing={5} container flex>
-            <Grid lg={4} md={12} flex={1} item>
+         <Grid className='grids_container' spacing={4} container flex>
+            <Grid lg={4} md={12} xs={12} s={12} flex={1} item>
                <FirstStep
                   stepsPassed={stepsPassed}
                   setStepsPassed={setStepsPassed}
@@ -34,6 +32,8 @@ export const Registration = () => {
             <Grid
                lg={4}
                md={12}
+               xs={12}
+               s={12}
                style={{
                   zIndex: stepsPassed.first ? 1 : -1,
                   opacity: stepsPassed.first ? 1 : 0.4,
@@ -50,6 +50,8 @@ export const Registration = () => {
             <Grid
                lg={4}
                md={12}
+               xs={12}
+               s={12}
                style={{
                   zIndex: stepsPassed.second ? 1 : -1,
                   opacity: stepsPassed.second ? 1 : 0.4,
