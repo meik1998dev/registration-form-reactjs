@@ -12,7 +12,7 @@ export const FinalStep = ({ values }) => {
    };
 
    return (
-      <StepCard number={3} color={'#EC0B43'}>
+      <StepCard number={3} color={'#7AE7C7'}>
          <Box
             display='flex'
             justifyContent='space-evenly'

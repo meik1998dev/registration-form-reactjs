@@ -72,7 +72,7 @@ export const FirstStep = ({
    };
 
    return (
-      <StepCard number={1} color={'#7AE7C7'}>
+      <StepCard number={1} color={'#EC0B43'}>
          <Box
             display='flex'
             justifyContent='space-evenly'
