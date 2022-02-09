@@ -27,11 +27,10 @@ export const FirstStep = ({
       } = event;
 
       const arr = { ...attendsName };
-
       if (value > number) {
          Array(value)
             .fill(0)
-            .map((_, i) => {
+            .forEach((_, i) => {
                if (i + 1 > number) {
                   arr[i + 1] = '';
                }
@@ -40,7 +39,7 @@ export const FirstStep = ({
       } else {
          Array(number)
             .fill(0)
-            .map((_, i) => {
+            .forEach((_, i) => {
                if (i + 1 > value) {
                   delete arr[i + 1];
                }

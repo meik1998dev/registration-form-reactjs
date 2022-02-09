@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { StepCard } from '../StepCard';
 import styled from '@emotion/styled';
 import {
@@ -19,7 +19,6 @@ export const SecondStep = ({
    const { specialAccommodations, companyNameOnBadge } = values;
 
    useEffect(() => {
-      console.log(checkIfPassed());
       checkIfPassed()
          ? setStepsPassed({ ...stepsPassed, second: true })
          : setStepsPassed({ ...stepsPassed, second: false });

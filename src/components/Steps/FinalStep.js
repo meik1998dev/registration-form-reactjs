@@ -1,4 +1,4 @@
-import { Button, Checkbox, FormControlLabel } from '@mui/material';
+import { Button, Checkbox } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import { StepCard } from '../StepCard';
