@@ -8,7 +8,7 @@ import {
    RadioGroup,
 } from '@mui/material';
 import { Box } from '@mui/system';
-import successVector from '../success-svgrepo-com.svg';
+import { SuccessSvg } from './SuccessSvg';
 
 export const SecondStep = ({
    values,
@@ -41,7 +41,6 @@ export const SecondStep = ({
                alignItems='center'
                flexDirection='row'>
                <Header>Would you like your company name in your badges?</Header>
-
                <FormControl>
                   <RadioGroup
                      value={companyNameOnBadge}
@@ -94,9 +93,7 @@ export const SecondStep = ({
                   </RadioGroup>
                </FormControl>
             </Box>
-            <Box display='flex' justifyContent={'center'}>
-               {stepsPassed.second && <Image src={successVector} />}
-            </Box>
+            <SuccessSvg show={stepsPassed.second } />
          </Box>
       </StepCard>
    );
@@ -106,9 +103,4 @@ const Header = styled.h6`
    font-size: 20px;
    flex-basis: 80%;
    padding: 5px;
-`;
-
-const Image = styled.img`
-   width: 200px;
-   margin: 64px;
 `;

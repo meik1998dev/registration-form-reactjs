@@ -3,6 +3,7 @@ import { Box, FormControl, MenuItem, Select, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { StepCard } from './StepCard';
 import successVector from '../success-svgrepo-com.svg';
+import { SuccessSvg } from './SuccessSvg';
 
 export const FirstStep = ({
    values,
@@ -103,11 +104,7 @@ export const FirstStep = ({
                   />
                ))}
          </Box>
-         <Box display='flex' justifyContent={'center'}>
-            {stepsPassed.first && Object.keys(attendsName).length !== 0 && (
-               <Image src={successVector} />
-            )}
-         </Box>
+         <SuccessSvg show={stepsPassed.first} />
       </StepCard>
    );
 };
@@ -119,8 +116,3 @@ const Header = styled.h6`
 const Input = styled(TextField)(() => ({
    margin: '10px',
 }));
-
-const Image = styled.img`
-   width: 200px;
-   margin: 64px;
-`;
