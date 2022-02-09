@@ -6,6 +6,7 @@ import {
    FormControlLabel,
    Radio,
    RadioGroup,
+   TextField,
 } from '@mui/material';
 import { Box } from '@mui/system';
 import { SuccessSvg } from '../SuccessSvg';
@@ -16,16 +17,24 @@ export const SecondStep = ({
    setStepsPassed,
    stepsPassed,
 }) => {
-   const { specialAccommodations, companyNameOnBadge } = values;
+   const { specialAccommodations, companyNameOnBadge, companyName } = values;
 
    useEffect(() => {
       checkIfPassed()
          ? setStepsPassed({ ...stepsPassed, second: true })
          : setStepsPassed({ ...stepsPassed, second: false });
-   }, [companyNameOnBadge, specialAccommodations]);
+   }, [companyNameOnBadge, specialAccommodations, companyName]);
+
+   const handleCompanyName = (event) => {
+      setValues({ ...values, companyName: event.target.value });
+   };
 
    const checkIfPassed = () => {
-      if (companyNameOnBadge === null || specialAccommodations === null) {
+      if (
+         companyNameOnBadge === null ||
+         specialAccommodations === null ||
+         (companyNameOnBadge === 'true' && companyName === '')
+      ) {
          return false;
       }
       return true;
@@ -44,10 +53,19 @@ export const SecondStep = ({
                   <RadioGroup
                      value={companyNameOnBadge}
                      onChange={(event) => {
-                        setValues({
-                           ...values,
-                           companyNameOnBadge: event.target.value,
-                        });
+                        if (event.target.value === 'false') {
+                           console.log('x');
+                           setValues({
+                              ...values,
+                              companyName: null,
+                              companyNameOnBadge: event.target.value,
+                           });
+                        } else {
+                           setValues({
+                              ...values,
+                              companyNameOnBadge: event.target.value,
+                           });
+                        }
                      }}>
                      <FormControlLabel
                         value={true}
@@ -62,6 +80,9 @@ export const SecondStep = ({
                   </RadioGroup>
                </FormControl>
             </Box>
+            {companyNameOnBadge === 'true' && (
+               <Input onChange={handleCompanyName} label='Company Name' />
+            )}
             <Box
                display='flex'
                justifyContent='space-evenly'
@@ -103,3 +124,8 @@ const Header = styled.h6`
    flex-basis: 80%;
    padding: 5px;
 `;
+
+const Input = styled(TextField)(() => ({
+   width: '70%',
+   marginLeft: '30px',
+}));

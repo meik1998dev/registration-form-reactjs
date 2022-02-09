@@ -9,6 +9,7 @@ export const Registration = () => {
    const [values, setValues] = useState({
       attendsName: {},
       companyNameOnBadge: null,
+      companyName: '',
       specialAccommodations: null,
    });
 

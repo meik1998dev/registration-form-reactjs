@@ -27,6 +27,7 @@ export const FinalStep = ({ values }) => {
          </Box>
          <Box display='flex' justifyContent='center'>
             <Button
+               style={{ marginBottom: '1rem' }}
                onClick={() => console.log(values)}
                disabled={checked ? false : true}
                variant='contained'>
