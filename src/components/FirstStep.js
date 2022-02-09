@@ -121,6 +121,6 @@ const Input = styled(TextField)(() => ({
 }));
 
 const Image = styled.img`
-   width: 36%;
+   width: 200px;
    margin: 64px;
 `;

@@ -22,8 +22,8 @@ export const Registration = () => {
    return (
       <>
          <Header>Seminar Registration</Header>
-         <Grid spacing={5} container flex>
-            <Grid flex={1} item>
+         <Grid padding={4} spacing={5} container flex>
+            <Grid lg={4} md={12} flex={1} item>
                <FirstStep
                   stepsPassed={stepsPassed}
                   setStepsPassed={setStepsPassed}
@@ -32,6 +32,8 @@ export const Registration = () => {
                />
             </Grid>
             <Grid
+               lg={4}
+               md={12}
                style={{
                   zIndex: stepsPassed.first ? 1 : -1,
                   opacity: stepsPassed.first ? 1 : 0.4,
@@ -46,6 +48,8 @@ export const Registration = () => {
                />
             </Grid>
             <Grid
+               lg={4}
+               md={12}
                style={{
                   zIndex: stepsPassed.second ? 1 : -1,
                   opacity: stepsPassed.second ? 1 : 0.4,

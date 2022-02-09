@@ -109,6 +109,6 @@ const Header = styled.h6`
 `;
 
 const Image = styled.img`
-   width: 36%;
+   width: 200px;
    margin: 64px;
 `;
